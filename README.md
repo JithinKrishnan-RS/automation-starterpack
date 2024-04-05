@@ -85,3 +85,18 @@ def test_example(base_page):
     base_page.open()
     assert "Example Domain" in base_page.get_title()
     base_page.input_text(base_page_locators.BasePageLocators.SEARCH_INPUT)
+```
+
+## Environment Variables
+
+This project uses environment variables for configuration. These are stored in a `.env` file. Here's a sample of what the `.env` file should look like:
+
+```ini
+email = "your-email@example.com"
+password = "your-password"
+otp = "your-otp"
+
+invalid_email = "invalid-email@example.com"
+invalid_password = "invalid-password"
+invalid_otp = "invalid-otp"
+```
