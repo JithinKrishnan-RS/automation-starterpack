@@ -10,7 +10,7 @@ class BasePage:
         self.helper = HelperFunctions(self.driver)
 
     def open(self):
-        self.driver.get(BasePageLocators.BASE_URL)
+        self.driver.get(Config.base_url)
 
     def get_title(self):
         return self.driver.title
