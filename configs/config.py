@@ -1,3 +1,4 @@
 # configs/config.py
 class Config:
-    SEARCH_TEXT = "Example Search"
+    base_url = 'http://'
+    search_text = "Example Search"
