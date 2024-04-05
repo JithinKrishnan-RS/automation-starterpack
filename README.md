@@ -65,3 +65,23 @@ project_root/<br>
 5. Download WebDriver executables and place them in the `drivers/` directory.
 6. Write your test cases in the `tests/` directory.
 7. Run tests using Pytest: `pytest`.
+
+## Usage Examples
+
+Here's an example of how to write a test case:
+
+```python
+# tests/test_example.py
+import pytest
+
+from locators import base_page_locators
+from pages.base_page import BasePage
+
+@pytest.fixture
+def base_page(setup_driver):
+    return BasePage(setup_driver)
+
+def test_example(base_page):
+    base_page.open()
+    assert "Example Domain" in base_page.get_title()
+    base_page.input_text(base_page_locators.BasePageLocators.SEARCH_INPUT)
