@@ -1,6 +1,6 @@
-Automation Starter Pack
+# Automation Starter Pack
 
-This starter pack provides a basic setup for writing Selenium tests using Python, Selenium, and Pytest framework.
+> This starter pack provides a basic setup for writing Selenium tests using Python, Selenium, and Pytest framework.
 
 ## Directory Structure
 
@@ -43,8 +43,8 @@ project_root/<br>
 
 - **tests/**: Contains test files with test cases.
 - **pages/**: Contains page objects representing web pages.
-- locators/: Contains files defining locators for web elements.
-  configs/: Contains configuration files.
+- **locators/**: Contains files defining locators for web elements.
+- **configs/**: Contains configuration files.
 - **utils/**: Contains utility functions and configuration files.
 - **drivers/**: Contains WebDriver executables for browsers.
 - **reports/**: Optional folder for test execution reports.
