@@ -53,3 +53,7 @@ Thumbs.db
 # log files
 **/geckodriver.log
 
+# .env file
+*.env
+.env
+
