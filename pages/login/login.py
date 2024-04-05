@@ -10,18 +10,21 @@ from utils.helper_functions import HelperFunctions
 # Function to load environment variables and get credentials
 def get_credentials():
     load_dotenv()  # Load environment variables from .env file
-    email = os.getenv('email')  # Get email from environment variable
-    password = os.getenv('password')  # Get password from environment variable
-    otp = os.getenv('otp')  # Get otp from environment variable
-    invalid_email = os.getenv('invalid_email')  # Get invalid email from environment variable
-    invalid_password = os.getenv('invalid_password')  # Get invalid password from environment variable
-    return email, password, otp, invalid_email, invalid_password
+    credentials = {
+        'email': os.getenv('email'),
+        'password': os.getenv('password'),
+        'otp': os.getenv('otp'),
+        'invalid_email': os.getenv('invalid_email'),
+        'invalid_password': os.getenv('invalid_password')
+    }
+    return credentials
 
 
 class Login:
     def __init__(self, driver):
         self.driver = driver
         self.helper = HelperFunctions(self.driver)  # Create an instance of the Helper class
+        self.credentials = get_credentials()  # Fetch credentials once during initialization
 
     # Function to open the base URL
     def open(self):
@@ -39,28 +42,28 @@ class Login:
     def input_email(self, locator):
         element = self.find_element(locator)
         element.clear()
-        email, _, _, _, _ = get_credentials()
+        email = self.credentials['email']
         element.send_keys(email)  # Input email
 
     # Function to input invalid email into the email field
     def input_invalid_email(self, locator):
         element = self.find_element(locator)
         element.clear()
-        _, _, _, invalid_email, _ = get_credentials()
+        invalid_email = self.credentials['invalid_email']
         element.send_keys(invalid_email)  # Input invalid email
 
     # Function to input password into the password field
     def input_password(self, locator):
         element = self.find_element(locator)
         element.clear()
-        _, password, _, _, _ = get_credentials()
+        password = self.credentials['password']
         element.send_keys(password)  # Input password
 
     # Function to input invalid password into the password field
     def input_invalid_password(self, locator):
         element = self.find_element(locator)
         element.clear()
-        _, _, _, _, invalid_password = get_credentials()
+        invalid_password = self.credentials['invalid_password']
         element.send_keys(invalid_password)  # Input invalid password
 
     # Function to click the sign-in button
@@ -72,7 +75,7 @@ class Login:
     def input_otp(self, locator):
         element = self.find_element(locator)
         element.clear()
-        _, _, otp, _, _ = get_credentials()
+        otp = self.credentials['otp']
         element.send_keys(otp)  # Input OTP
 
     # Function to click the verify button
