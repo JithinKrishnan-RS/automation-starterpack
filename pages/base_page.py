@@ -1,23 +1,24 @@
 # pages/base_page.py
 from configs.config import Config
 from locators.base_page_locators import BasePageLocators
-from utils.helper_functions import wait_for_element_visible
+from utils.helper_functions import HelperFunctions
 
 
 class BasePage:
-    def __init__(self, browser):
-        self.browser = browser
+    def __init__(self, driver):
+        self.driver = driver
+        self.helper = HelperFunctions(self.driver)
 
     def open(self):
-        self.browser.get(BasePageLocators.BASE_URL)
+        self.driver.get(BasePageLocators.BASE_URL)
 
     def get_title(self):
-        return self.browser.title
+        return self.driver.title
 
     def find_element(self, locator):
-        return wait_for_element_visible(self.browser, locator)
+        return self.helper.wait_for_element_visible(self.driver, locator)
 
     def input_text(self, locator):
         element = self.find_element(locator)
         element.clear()
-        element.send_keys(Config.SEARCH_TEXT)
+        element.send_keys(Config.search_text)
