@@ -17,12 +17,12 @@ project_root/<br>
 │ └── other_page.py<br>
 │<br>
 ├── locators/<br>
-│ ├── __init__.py<br>
+│ ├── init.py<br>
 │ ├── base_page_locators.py<br>
 │ └── other_page_locators.py<br>
 │<br>
 ├── configs/<br>
-│ ├── __init__.py<br>
+│ ├── init.py<br>
 │ └── config.py<br>
 │<br>
 ├── utils/<br>
@@ -34,6 +34,8 @@ project_root/<br>
 │ └── chromedriver.exe (or other WebDriver executables)<br>
 │<br>
 ├── reports/<br>
+│<br>
+├── screenshots/<br>
 │<br>
 ├── requirements.txt<br>
 ├── conftest.py<br>
@@ -48,6 +50,7 @@ project_root/<br>
 - **utils/**: Contains utility functions and configuration files.
 - **drivers/**: Contains WebDriver executables for browsers.
 - **reports/**: Optional folder for test execution reports.
+- **screenshots/**: Contains screenshots generated upon test failure.
 - **requirements.txt**: Lists Python dependencies.
 - **conftest.py**: Fixture setup and teardown.
 - **pytest.ini**: Configuration options for Pytest.
