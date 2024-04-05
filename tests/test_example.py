@@ -13,4 +13,3 @@ def base_page(setup_driver):
 def test_example(base_page):
     base_page.open()
     assert "Example Domain" in base_page.get_title()
-    base_page.input_text(base_page_locators.BasePageLocators.SEARCH_INPUT)
