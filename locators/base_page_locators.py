@@ -3,4 +3,4 @@ from selenium.webdriver.common.by import By
 
 
 class BasePageLocators:
-    SEARCH_INPUT = (By.NAME, "q")
+    search_input = (By.NAME, "q")
