@@ -54,6 +54,7 @@ Thumbs.db
 **/geckodriver.log
 
 # .env file
-*.env
 .env
 
+# media files
+*.png
