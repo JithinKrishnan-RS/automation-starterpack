@@ -11,11 +11,11 @@ from utils.helper_functions import HelperFunctions
 def get_credentials():
     load_dotenv()  # Load environment variables from .env file
     credentials = {
-        'email': os.getenv('email'),
-        'password': os.getenv('password'),
-        'otp': os.getenv('otp'),
-        'invalid_email': os.getenv('invalid_email'),
-        'invalid_password': os.getenv('invalid_password')
+        'email': os.getenv('EMAIL'),
+        'password': os.getenv('PASSWORD'),
+        'otp': os.getenv('OTP'),
+        'invalid_email': os.getenv('INVALID_EMAIL'),
+        'invalid_password': os.getenv('INVALID_PASSWORD')
     }
     return credentials
 
