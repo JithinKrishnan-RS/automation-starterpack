@@ -97,11 +97,7 @@ def test_example(base_page):
 This project uses environment variables for configuration. These are stored in a `.env` file. Here's a sample of what the `.env` file should look like:
 
 ```ini
-email = "your-email@example.com"
-password = "your-password"
-otp = "your-otp"
-
-invalid_email = "invalid-email@example.com"
-invalid_password = "invalid-password"
-invalid_otp = "invalid-otp"
+EMAIL="your-email@example.com"
+PASSWORD="your-password"
+OTP="your-otp"
 ```
