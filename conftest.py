@@ -1,3 +1,5 @@
+from datetime import datetime
+
 import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
@@ -15,3 +17,9 @@ def setup_driver():
 
     # Tear down the driver
     driver.quit()
+
+
+@pytest.hookimpl(tryfirst=True)
+def pytest_configure(config):
+    now = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    config.option.htmlpath = config.option.htmlpath.replace(".html", f"_{now}.html")
