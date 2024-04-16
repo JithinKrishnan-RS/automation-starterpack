@@ -40,24 +40,18 @@ class Login:
 
     # Function to input email into the email field
     def input_email(self, locator):
-        element = self.find_element(locator)
-        element.clear()
         email = self.credentials['email']
-        element.send_keys(email)  # Input email
+        self.helper.wait_and_input_text(locator, email)  # Input email
 
     # Function to input invalid email into the email field
     def input_invalid_email(self, locator):
-        element = self.find_element(locator)
-        element.clear()
         invalid_email = self.credentials['invalid_email']
-        element.send_keys(invalid_email)  # Input invalid email
+        self.helper.wait_and_input_text(locator, invalid_email)  # Input invalid email
 
     # Function to input password into the password field
     def input_password(self, locator):
-        element = self.find_element(locator)
-        element.clear()
         password = self.credentials['password']
-        element.send_keys(password)  # Input password
+        self.helper.wait_and_input_text(locator, password)  # Input password
 
     # Function to input invalid password into the password field
     def input_invalid_password(self, locator):
