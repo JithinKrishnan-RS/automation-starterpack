@@ -49,7 +49,7 @@ project_root/<br>
 - **configs/**: Contains configuration files.
 - **utils/**: Contains utility functions and configuration files.
 - **drivers/**: Contains WebDriver executables for browsers.
-- **reports/**: Optional folder for test execution reports.
+- **reports/**: Contains test reports, generated automatically on each execution.
 - **screenshots/**: Contains screenshots generated upon test failure.
 - **requirements.txt**: Lists Python dependencies.
 - **conftest.py**: Fixture setup and teardown.
@@ -99,5 +99,20 @@ This project uses environment variables for configuration. These are stored in a
 ```ini
 EMAIL="your-email@example.com"
 PASSWORD="your-password"
-OTP="your-otp"
 ```
+
+## Download Links
+
+- [Python](https://www.python.org/downloads/)
+- [PyCharm](https://www.jetbrains.com/pycharm/download/) / [Visual Studio Code](https://code.visualstudio.com/download)
+- [WebDriver executables](https://www.selenium.dev/documentation/en/webdriver/driver_requirements/)
+- [ChromeDriver](https://sites.google.com/a/chromium.org/chromedriver/downloads) / [GeckoDriver](https://github.com/mozilla/geckodriver/releases) / [EdgeDriver](https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/?form=MA13LH)
+
+## Important Documentations
+
+- [Selenium Python Documentation](https://selenium-python.readthedocs.io/)
+- [Pytest Documentation](https://docs.pytest.org/en/stable/)
+- [Python Virtual Environments](https://docs.python.org/3/library/venv.html)
+- [WebDriver executables](https://www.selenium.dev/documentation/en/webdriver/driver_requirements/)
+- [Environment Variables in Python](https://docs.python.org/3/library/os.html#os.environ)
+- [Python dotenv](https://pypi.org/project/python-dotenv/)
