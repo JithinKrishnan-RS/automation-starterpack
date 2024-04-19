@@ -2,46 +2,89 @@
 
 > This starter pack provides a basic setup for writing Selenium tests using Python, Selenium, and Pytest framework.
 
+## Contents
+
+- [Tools & Frameworks](#tools--frameworks)
+- [Directory Structure](#directory-structure)
+- [Getting Started](#getting-started)
+- [Environment Variables](#environment-variables)
+- [Miscellaneous](#miscellaneous)
+- [Download Links](#download-links)
+- [Important Documentations](#important-documentations)
+
+---
+
+## Tools & Frameworks
+
+### Selenium
+
+Selenium is a popular open-source automation testing framework primarily used for web applications. It provides a set of
+tools and libraries to automate web browser actions, such as clicking buttons, entering text, navigating through pages,
+and verifying expected behaviors.
+
+### Python
+
+Python is a popular programming language for Selenium automation for several reasons:
+
+- Simplicity and readability
+- Large ecosystem
+- Cross-platform compatibility
+- Integration with Selenium
+- Third-party packages
+
+### Pytest
+
+Pytest is a testing framework for Python that simplifies the process of writing and executing tests. It offers
+simplicity, a fixture model, powerful assertions, console output, HTML report generation, and failure hooks.
+
+---
+
 ## Directory Structure
 
-project_root/<br>
-│<br>
-├── tests/<br>
-│ ├── init.py<br>
-│ ├── test_module1.py<br>
-│ └── test_module2.py<br>
-│<br>
-├── pages/<br>
-│ ├── init.py<br>
-│ ├── base_page.py<br>
-│ └── other_page.py<br>
-│<br>
-├── locators/<br>
-│ ├── init.py<br>
-│ ├── base_page_locators.py<br>
-│ └── other_page_locators.py<br>
-│<br>
-├── configs/<br>
-│ ├── init.py<br>
-│ └── config.py<br>
-│<br>
-├── utils/<br>
-│ ├── init.py<br>
-│ ├── SeleniumExtended.py<br>
-│ └── config.py<br>
-│<br>
-├── drivers/<br>
-│ └── chromedriver.exe (or other WebDriver executables)<br>
-│<br>
-├── reports/<br>
-│<br>
-├── screenshots/<br>
-│<br>
-├── requirements.txt<br>
-├── conftest.py<br>
-└── pytest.ini<br>
+The project follows a modular structure to separate concerns and improve maintainability. Here's an example of the
+directory structure:
 
-## Folder Structure Explanation
+```plaintext
+
+project_root/
+│
+├── tests/
+│ ├── init.py
+│ ├── test_module1.py
+│ └── test_module2.py
+│
+├── pages/
+│ ├── init.py
+│ ├── base_page.py
+│ └── other_page.py
+│
+├── locators/
+│ ├── init.py
+│ ├── base_page_locators.py
+│ └── other_page_locators.py
+│
+├── configs/
+│ ├── init.py
+│ └── config.py
+│
+├── utils/
+│ ├── init.py
+│ ├── helper_functions.py
+│ └── config.py
+│
+├── drivers/
+│ └── chromedriver.exe (or other WebDriver executables)
+│
+├── reports/
+│
+├── screenshots/
+│
+├── requirements.txt
+├── conftest.py
+└── pytest.ini
+```
+
+**Folder Structure Explanation**
 
 - **tests/**: Contains test files with test cases.
 - **pages/**: Contains page objects representing web pages.
@@ -55,19 +98,39 @@ project_root/<br>
 - **conftest.py**: Fixture setup and teardown.
 - **pytest.ini**: Configuration options for Pytest.
 
+---
+
 ## Getting Started
 
-1. Clone this repository.
-2. Install Python if not already installed.
-3. Install dependencies using `pip install -r requirements.txt`.
-4. Create and activate a virtual environment (optional but recommended).
+1. Install Dependencies:
+    - Install Python, IDE (PyCharm/VS Code), if not already installed.
+        - [Python](https://www.python.org/downloads/)
+        - [PyCharm](https://www.jetbrains.com/pycharm/download/) / [Visual Studio Code](https://code.visualstudio.com/download)
+
+2. Install dependencies using: `pip install -r requirements.txt`.
+    - For mac devices, use the `pip3` command, instead of `pip`.
+    - Workaround: If the above command is not working, try installing dependencies separately.
+
+        - `pip install pytest`
+        - `pip install selenium`
+        - `pip install python-dotenv`
+        - `pip install barnum`
+        - `pip install pytest-html`
+        - `pip install pytest-failed-screenshot`
+
+3. Create and activate a virtual environment (optional but recommended).
    ```bash
    python -m venv venv
    source venv/bin/activate  # On Linux/Mac
    venv\Scripts\activate      # On Windows
-5. Download WebDriver executables and place them in the `drivers/` directory.
+4. Download WebDriver executables and place them in the `drivers/` directory.
+    - [ChromeDriver](https://sites.google.com/a/chromium.org/chromedriver/downloads) / [GeckoDriver](https://github.com/mozilla/geckodriver/releases) / [EdgeDriver](https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/?form=MA13LH)
+5. Install any other pending dependencies from `configs/config.py`.
 6. Write your test cases in the `tests/` directory.
-7. Run tests using Pytest: `pytest`.
+7. Execute the tests using the command `pytest tests/test_filename.py`.<br>
+        Eg.: `pytest test_login.py`
+
+---
 
 ## Usage Examples
 
@@ -100,6 +163,23 @@ This project uses environment variables for configuration. These are stored in a
 EMAIL="your-email@example.com"
 PASSWORD="your-password"
 ```
+
+## Miscellaneous
+
+### Why Executing Scripts using Pytest Command?
+
+Executing tests using the command line with the pytest command offers several advantages:
+
+- **Simplicity**: Running tests from the command line with pytest is straightforward and requires minimal setup.
+- **Customization**: The pytest command provides various options and flags that allow us to customize test execution
+  behavior.
+- **Parallel Execution**: pytest supports parallel test execution, allowing us to run tests concurrently across multiple
+  processes or threads.
+- **Output Formats**: pytest can generate test reports in different formats, such as plain text, JUnit XML, HTML, etc.
+- **Plugin Integration**: pytest has a rich ecosystem of plugins that extend its functionality and integrate with other
+  tools.
+
+---
 
 ## Download Links
 
