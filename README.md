@@ -69,8 +69,8 @@ project_root/
 │
 ├── utils/
 │ ├── init.py
-│ ├── helper_functions.py
-│ └── config.py
+│ └── helper_functions.py
+│
 │
 ├── drivers/
 │ └── chromedriver.exe (or other WebDriver executables)
@@ -194,8 +194,15 @@ def test_example(base_page):
 
 ## Environment Variables
 
-This project uses environment variables for configuration. These are stored in a `.env` file. Here's a sample of what
-the `.env` file should look like:
+This project uses environment variables for configuration. Sensitive data like emails, passwords, etc. are stored in
+a `.env` file.
+
+### Adding .env File
+
+- Create a .env file at the project root.
+- Add required values to the file
+
+Here's a sample of what the .env file should look like in this project:
 
 ```ini
 EMAIL = "your-email@example.com"
