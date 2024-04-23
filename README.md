@@ -162,7 +162,7 @@ project_root/
     - Replace test_filename.py with the name of the test file you want to execute.
         - Eg.: `pytest test_login.py`
 
-By following these steps, you should be able to set up your development environment, clone the repository, install
+By following these steps, you should be able to set up your pytest environment, clone the repository, install
 dependencies, and run tests with ease.
 
 ---
