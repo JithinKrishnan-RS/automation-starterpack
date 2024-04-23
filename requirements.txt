@@ -1,3 +1,6 @@
 pytest
 selenium
 python-dotenv
+barnum
+pytest-html
+pytest-failed-screenshot
