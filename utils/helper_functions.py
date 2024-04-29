@@ -116,8 +116,7 @@ class HelperFunctions:
         element = self.driver.find_element(*locator)
         self.driver.execute_script("arguments[0].scrollIntoView(true);", element)
 
-    def move_to_element_action(self, locator, timeout=None):
-        timeout = timeout if timeout else self.default_timeout
+    def move_to_element_action(self, locator):
         ActionChains(self.driver).move_to_element(locator).perform()
 
     def presence_of_element(self, locator, timeout=None):
@@ -132,12 +131,10 @@ class HelperFunctions:
                 EC.element_to_be_clickable(locator)
             )
 
-    def scroll_to_end_of_page(self, timeout=None):
-        timeout = timeout if timeout else self.default_timeout
+    def scroll_to_end_of_page(self):
         self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 
-    def scroll_to_end_of_top(self, timeout=None):
-        timeout = timeout if timeout else self.default_timeout
+    def scroll_to_end_of_top(self):
         self.driver.execute_script("window.scrollTo(0, 0);")
 
     def presence_of_element_located(self, locator, timeout=None):
