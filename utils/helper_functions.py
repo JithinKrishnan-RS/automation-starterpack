@@ -103,7 +103,7 @@ class HelperFunctions:
 
         return element_text
 
-    def wait_and_get_text_by_new(self, locator, timeout=None):
+    def wait_and_get_text_by_presence(self, locator, timeout=None):
         timeout = timeout if timeout else self.default_timeout
         elm = WebDriverWait(self.driver, timeout).until(
             EC.presence_of_element_located(locator)
@@ -125,12 +125,12 @@ class HelperFunctions:
         try:
             WebDriverWait(self.driver, timeout).until(
                 EC.element_to_be_clickable(locator)
-            ).click()
+            )
         except StaleElementReferenceException:
             time.sleep(3)
             WebDriverWait(self.driver, timeout).until(
                 EC.element_to_be_clickable(locator)
-            ).click()
+            )
 
     def scroll_to_end_of_page(self, timeout=None):
         timeout = timeout if timeout else self.default_timeout
@@ -145,12 +145,12 @@ class HelperFunctions:
         try:
             WebDriverWait(self.driver, timeout).until(
                 EC.presence_of_element_located(locator)
-            ).click()
+            )
         except StaleElementReferenceException:
             time.sleep(3)
             WebDriverWait(self.driver, timeout).until(
                 EC.presence_of_element_located(locator)
-            ).click()
+            )
 
     def wait_until_elements_are_invisible(self, locator, timeout=None):
         timeout = timeout if timeout else self.default_timeout
