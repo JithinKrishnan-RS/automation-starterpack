@@ -25,6 +25,7 @@ class Login:
         self.driver = driver
         self.helper = HelperFunctions(self.driver)  # Create an instance of the Helper class
         self.credentials = get_credentials()  # Fetch credentials once during initialization
+        load_dotenv()  # Load environment variables from .env file
 
     # Function to open the base URL
     def open(self):
@@ -45,7 +46,7 @@ class Login:
 
     # Function to input invalid email into the email field
     def input_invalid_email(self, locator):
-        invalid_email = self.credentials['invalid_email']
+        invalid_email = os.getenv('INVALID_EMAIL')
         self.helper.wait_and_input_text(locator, invalid_email)  # Input invalid email
 
     # Function to input password into the password field
