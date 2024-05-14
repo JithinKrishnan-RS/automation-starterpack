@@ -18,7 +18,8 @@ class HelperFunctions:
             EC.visibility_of_element_located(locator)
         ).send_keys(text)
 
-    def wait_for_element_visible(self, locator, timeout=10):
+    def wait_for_element_visible(self, locator, timeout=None):
+        timeout = timeout if timeout else self.default_timeout
         return WebDriverWait(self.driver, timeout).until(EC.visibility_of_element_located(locator))
 
     def wait_for_element_to_be_clickable(self, locator, timeout=None):
@@ -94,15 +95,6 @@ class HelperFunctions:
 
         return element_text
 
-    def wait_and_get_text_by_visible_element(self, locator, timeout=None):
-        timeout = timeout if timeout else self.default_timeout
-        elm = WebDriverWait(self.driver, timeout).until(
-            EC.visibility_of_element_located(locator)
-        )
-        element_text = elm.text
-
-        return element_text
-
     def wait_and_get_text_by_presence(self, locator, timeout=None):
         timeout = timeout if timeout else self.default_timeout
         elm = WebDriverWait(self.driver, timeout).until(
@@ -119,7 +111,7 @@ class HelperFunctions:
     def move_to_element_action(self, locator):
         ActionChains(self.driver).move_to_element(locator).perform()
 
-    def presence_of_element(self, locator, timeout=None):
+    def element_to_be_clickable(self, locator, timeout=None):
         timeout = timeout if timeout else self.default_timeout
         try:
             WebDriverWait(self.driver, timeout).until(
