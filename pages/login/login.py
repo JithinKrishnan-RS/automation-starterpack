@@ -43,7 +43,7 @@ class Login:
         self.helper.wait_and_input_text(locator, invalid_password)  # Input password
 
     # Function to click the login button
-    def click_login(self, locator):
+    def click(self, locator):
         self.helper.wait_and_click(locator)  # Click sign in button
 
     def login_form_disappear(self, locator):

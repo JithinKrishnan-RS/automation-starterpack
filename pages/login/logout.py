@@ -18,7 +18,7 @@ class Logout:
     def click_profile_icon(self, locator):
         self.helper.wait_and_click(locator)
 
-    def click_logout(self, locator):
+    def click(self, locator):
         self.helper.wait_and_click(locator)
 
     def login_form_visible(self, locator):

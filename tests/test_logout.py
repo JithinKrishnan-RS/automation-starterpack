@@ -25,7 +25,7 @@ def test_logout(logout_page, login_page):
     assert "" in login_page.get_title()  # Assert that the page title is correct
     login_page.input_email(LoginLocators.email, LoginConfig.email)  # Input email
     login_page.input_password(LoginLocators.password)  # Input password
-    login_page.click_login(LoginLocators.sign_in)  # Click the sign-in button
+    login_page.click(LoginLocators.sign_in)  # Click the sign-in button
     login_page.login_form_disappear(LoginLocators.sign_in)  # Wait for the login form to disappear
     time.sleep(5)  # Wait for 5 seconds
     assert login_page.driver.current_url == LoginConfig.base_url + ""  # Assert that the current URL is correct
@@ -33,7 +33,7 @@ def test_logout(logout_page, login_page):
     time.sleep(2)  # Wait for 2 seconds
     logout_page.click_profile_icon(LoginLocators.profile_icon)  # Click the profile icon
     time.sleep(1)  # Wait for 1 second
-    logout_page.click_logout(LoginLocators.logout)
+    logout_page.click(LoginLocators.logout)
     time.sleep(5)  # Wait for 5 seconds
     logout_page.login_form_visible(LoginLocators.sign_in)  # Wait for the login form to appear
     assert "" in logout_page.get_title()  # Assert that the page title is correct
@@ -51,7 +51,7 @@ def test_url_after_logout(logout_page, login_page):
     assert "" in login_page.get_title()  # Assert that the page title is correct
     login_page.input_email(LoginLocators.email)  # Input email
     login_page.input_password(LoginLocators.password)  # Input password
-    login_page.click_login(LoginLocators.sign_in)  # Click the sign-in button
+    login_page.click(LoginLocators.sign_in)  # Click the sign-in button
     login_page.login_form_disappear(LoginLocators.sign_in)  # Wait for the login form to disappear
     time.sleep(5)  # Wait for 5 seconds
     assert login_page.driver.current_url == LoginConfig.base_url + ""  # Assert that the current URL is correct
@@ -59,7 +59,7 @@ def test_url_after_logout(logout_page, login_page):
     time.sleep(2)  # Wait for 2 seconds
     logout_page.click_profile_icon(LoginLocators.profile_icon)  # Click the profile icon
     time.sleep(1)  # Wait for 1 second
-    logout_page.click_logout(LoginLocators.logout)
+    logout_page.click(LoginLocators.logout)
     time.sleep(5)  # Wait for 5 seconds
     logout_page.login_form_visible(LoginLocators.sign_in)  # Wait for the login form to appear
     assert "" in logout_page.get_title()  # Assert that the page title is correct
