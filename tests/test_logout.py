@@ -19,7 +19,7 @@ def login_page(setup_driver):
     return Login(setup_driver)
 
 
-def test_admin_logout(logout_page, login_page):
+def test_logout(logout_page, login_page):
     login_page.open()  # Open the login page
     time.sleep(2)  # Wait for 2 seconds
     assert "" in login_page.get_title()  # Assert that the page title is correct
@@ -45,7 +45,7 @@ def test_admin_logout(logout_page, login_page):
     assert "" in login_page.get_title()  # Assert that the page title is correct
 
 
-def test_url_after_admin_logout(logout_page, login_page):
+def test_url_after_logout(logout_page, login_page):
     login_page.open()  # Open the login page
     time.sleep(2)  # Wait for 2 seconds
     assert "" in login_page.get_title()  # Assert that the page title is correct
