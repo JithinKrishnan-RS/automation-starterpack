@@ -129,6 +129,12 @@ project_root/
 5. Checkout to branch ***release/version-1.0***.
     - Use the command `git checkout origin release/version-1.0` to switch to the specified branch.
 
+    #### Now, use the below command in the terminal to remove already initialized git from the repository.
+    ```Remove-Item -Recurse -Force .git```
+
+    To confirm the git is removed, use ```Get-ChildItem -Hidden``` If .git is not present, git is successfully removed.
+    Now, to initialize a new git repository, use the command ```git init```
+
 6. Install Dependencies.
     - Use the command `pip install -r requirements.txt` to install all dependencies listed in the `requirements.txt`
       file.
